@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Snake</title>
+    <link rel="stylesheet" href="/css/snake.css">
+</head>
+<body>
+    <header>
+        <h1>Game Snake</h1>
+    </header>
+    
+    <div id="game-container">
+        <div id="game-board">
+            <!-- Area untuk permainan -->
+        </div>
+        
+        <div id="controls">
+            <div id="vertical-controls">
+                <button id="up-button">Atas</button>
+            </div>
+            <div id="horizontal-controls">
+                <button id="left-button">Kiri</button>
+                <button id="right-button">Kanan</button>
+            </div>
+            <div id="bottom-controls">
+                <button id="down-button">Bawah</button>
+            </div>
+        </div>
+
+        <div id="score-board">
+            <p>Poin: <span id="score">0</span></p>
+        </div>
+
+        <button id="reset-button">Reset</button>
+        <button id="back-button">Kembali ke Menu</button>
+    </div>
+    <audio id="background-music" autoplay loop>
+        <source src="audio/untukgame.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="/js/snake.js"></script>
+</body>
+</html>

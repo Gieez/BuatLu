@@ -1,0 +1,253 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff94c2, #f48fb1, #ff80ab);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#confess-container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#envelope {
+    width: 300px;
+    height: 200px;
+    background-color: #ff4081;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#envelope-flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: #e91e63;
+    transform-origin: top;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+
+#envelope-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ff4081;
+    z-index: 1;
+}
+
+#letter {
+    position: absolute;
+    bottom: -300px;
+    width: 100%;
+    background: linear-gradient(to bottom, #ffffff, #ffe0f0);
+    color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.8s ease-in-out, bottom 0.8s ease-in-out;
+    max-height: 300px; /* Limit letter height */
+    overflow-y: scroll;
+    padding-top: 20px; /* To make sure text starts from the top */
+    margin-top: 0;
+    scroll-padding-top: 20px; /* Ensure scroll starts from the top of the letter */
+}
+
+/* Surat lebih berwarna */
+#letter p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+#letter p:nth-child(odd) {
+    color: #ff4081; /* Merah muda untuk teks ganjil */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#letter p:nth-child(even) {
+    color: #f48fb1; /* Warna lebih terang untuk teks genap */
+    background: linear-gradient(to right, #ff4081, #f48fb1);
+    padding: 5px;
+    border-radius: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#letter p:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Scroll behavior */
+#letter::-webkit-scrollbar {
+    width: 8px;
+}
+
+#letter::-webkit-scrollbar-thumb {
+    background: #ff4081;
+    border-radius: 10px;
+}
+
+/* Button */
+#open-button {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#open-button:hover {
+    background-color: #e91e63;
+}
+
+#background-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Rocket Animations */
+.rocket {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    animation: fly 5s infinite ease-in-out;
+    background: url('rocket.png') no-repeat center/cover;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 100vh) rotate(0);
+    }
+    50% {
+        transform: translate(50vw, 50vh) rotate(20deg);
+    }
+    100% {
+        transform: translate(100vw, 0) rotate(-20deg);
+    }
+}
+
+/* Emote Animations */
+@keyframes emote-fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.emote {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    animation: emote-fall 3s linear infinite;
+    opacity: 0;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #envelope {
+        width: 250px;
+        height: 150px;
+    }
+
+    #letter {
+        height: 200px;
+    }
+
+    #open-button {
+        font-size: 1rem;
+    }
+
+}
+
+#back-button {
+    background-color: #E91E63;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back-button:hover {
+    background-color: #45a049;
+}
+
+/* Flower Animation */
+#flower-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Agar bunga tidak mengganggu interaksi dengan elemen lain */
+    z-index: 0;
+}
+
+.flower {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    opacity: 0;
+    animation: bloom 4s ease-in-out infinite;
+}
+
+@keyframes bloom {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+}

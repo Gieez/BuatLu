@@ -1,0 +1,106 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #FF4081, #9c27b0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #e91e63;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#clicker {
+    margin-bottom: 20px;
+}
+
+#click-button {
+    background-color: #FF4081;
+    padding: 20px 40px;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#click-button:hover {
+    background-color: #E91E63;
+}
+
+#score-board {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#reset-button {
+    background-color: #FF4081;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#reset-button:hover {
+    background-color: #E91E63;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    #click-button {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+
+    #score-board {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tambahkan ke bagian tombol untuk memberikan style pada tombol back */
+#back-button {
+    background-color: #E91E63; /* Hijau */
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#back-button:hover {
+    background-color: #45a049; /* Hijau sedikit lebih gelap saat hover */
+}

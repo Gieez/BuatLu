@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Game</title>
+    <link rel="stylesheet" href="css/memory-match.css"> <!-- Link ke CSS -->
+    <script src="js/memory-match.js" defer></script> <!-- Link ke JS -->
+</head>
+<body>
+    <header>
+        <h1>Memory Match Game</h1>
+        <div>
+            <button id="reset-memory">Reset Game</button>
+            <a href="index.html"><button id="back-button">Back to Menu</button></a>
+        </div>
+    </header>
+
+    <main>
+        <div id="game-info">
+            <p id="moves">Langkah: 0</p>
+            <p id="matched-pairs">Pasangan yang cocok: 0</p>
+        </div>
+
+        <div id="game-board"></div>
+    </main>
+    <audio id="background-music" autoplay loop>
+        <source src="audio/untukgame.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
